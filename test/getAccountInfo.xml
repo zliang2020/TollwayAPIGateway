@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ats:0700:IVR:ContactCenter">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:MT_GetAccountInfo>
+         <AccountNumber>1</AccountNumber>
+         <PIN>1</PIN>
+      </urn:MT_GetAccountInfo>
+   </soapenv:Body>
+</soapenv:Envelope>

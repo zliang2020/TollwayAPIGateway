@@ -1,0 +1,36 @@
+# endpoints
+API_DEV_ENDPOINT = "http://drdx1cilv01.rcvp.tollway.state.il.us:50900/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_TWILIO&receiverParty=&receiverService=&interface=SI_ContactCenterIVRIn&interfaceNamespace=urn:ats:0700:IVR:ContactCenter"
+API_QUA_ENDPOINT = "http://drqx1cilv01.rcvp.tollway.state.il.us:50900/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_TWILIO&receiverParty=&receiverService=&interface=SI_ContactCenterIVRIn&interfaceNamespace=urn:ats:0700:IVR:ContactCenter"
+API_TRN_ENDPOINT = "http://drtx1cilv01.rcvp.tollway.state.il.us:50900/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_TWILIO&receiverParty=&receiverService=&interface=SI_ContactCenterIVRIn&interfaceNamespace=urn:ats:0700:IVR:ContactCenter"
+API_PRE_ENDPOINT = "http://carx1cilv01.rcvp.tollway.state.il.us:50900/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_TWILIO&receiverParty=&receiverService=&interface=SI_ContactCenterIVRIn&interfaceNamespace=urn:ats:0700:IVR:ContactCenter"
+API_PROD_ENDPOINT = "http://capx1cslv01.rcvp.tollway.state.il.us:50900/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_TWILIO&receiverParty=&receiverService=&interface=SI_ContactCenterIVRIn&interfaceNamespace=urn:ats:0700:IVR:ContactCenter"
+
+# evn
+devPath = "/dev-sapivr"
+quaPath = "/qua-sapivr"
+trnPath = "/trn-sapivr"
+prePath = "/pre-sapivr"
+prodPath = "/sapivr"
+
+# Test SAP SOAP Endpoints from GW server
+curl --location --request POST --insecure -v ^
+-u <user_name>:<password> ^
+-H "Accept: application/xml" -H "Content-Type: application/xml" ^
+-H "x-twilio-token: <token>" ^
+-d @./getAccountInfo.xml ^
+<SAP_SOAP_API_ENDPOINT>
+
+
+#Test GW Local
+curl --location --request POST --insecure -v ^
+-u <user_name>:<password> ^
+-H "Accept: application/xml" -H "Content-Type: application/xml" ^
+-H "x-twilio-token: <token>" ^
+-d @./getAccountInfo.xml ^
+https://<host_name>/<env>-sapivr
+
+
+#Test from Twilio
+curl --location --request POST --insecure -v ^
+-d "Token=<token>&User=<user_name>&Password=<password>&Server=<Load_balancer_Host>/<env>-sapivr"  ^
+https://cyan-crocodile-3728.twil.io/testSAP
