@@ -9,17 +9,20 @@ To install tollway Twilio IVR API gateway, using below listed steps.
 
 # COLLECT INFO
 To starting build the API gateway, collecting following information as they are required during the installation.
-* Load Balancer Server
-* GW Hostname
-* GW Certificates in X-509 format
-* Twilio Tokens
-* SAP API End Points
-* SAP API username/password
-* SAP API test data
+* Tollway to provide the load balancer host name
+* Tollway to provide the lAPI GW Hostname
+* Tollway to provide the CA signed certificate for API GW in X-509 format
+* Presidio will delivery the Twilio Tokens to Tollway securely
+* Accenture team to provide SAP SOAP API End Points
+* Accenture team to provide SAP SOAP API username/password
+* Accenture team to provide SAP API test data
 
 
 # INSTALL NODES JS
-*	Choose and create a home folder for API gateway
+*	Choose and create a home folder for API gateway, 
+    
+    The folder will be referred as {{API_GATEWAY_HOME}} in following section
+ 
 
 *	Install npm/nodes.js 
 ```html   
@@ -37,6 +40,7 @@ npm install --global yarn
 ```bat	
 cd {{API_GATEWAY_HOME}} 
 ```
+Replace {{API_GATEWAY_HOME}} with the folder created in first step.
 
 * Create new nodes application 
 ```bat	
@@ -92,7 +96,7 @@ cd sslcert
 ```
 * Copy and rename server.crt/server.key to the folder if the certificate is available
 
-* No certs, generate self-signed certificate
+* Or if no CA signed certificate, we can generate self-signed certificate
 ```bat	
 install openssl https://slproweb.com/download/Win64OpenSSL-1_1_1i.msi  
 "C:\Program Files\OpenSSL-Win64\bin\openssl" req -new -x509 -days 3650 -nodes -out server.crt -keyout server.key
