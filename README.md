@@ -186,3 +186,19 @@ https://cyan-crocodile-3728.twil.io/testSAP
 ```
 Replace the <user_name>, <password>, <token>, <load_balancer_host> and <env>
 
+
+# SETUP SERVICE
+* Stop NPM
+```bat
+cd {{API_GATEWAY_HOME}}  
+npm stop
+```
+* Install qckwinsrv
+```bat
+npm install -g qckwinsvc
+```
+* Start as service
+```bat
+qckwinsvc
+```
+
