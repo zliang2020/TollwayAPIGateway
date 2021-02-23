@@ -165,7 +165,7 @@ https://curl.se/windows/dl-7.74.0_2/curl-7.74.0_2-win64-mingw.zip
 curl --location --request POST --insecure -v ^
 -u <user_name>:<password> ^
 -H "Accept: application/xml" -H "Content-Type: application/xml" ^
--H "x-twilio-token: <token>" ^
+-H "SOAPAction: ""http://sap.com/xi/WebService/soap1.1"""
 -d @./getAccountInfo.xml ^
 <SAP_SOAP_API_ENDPOINT>
 ```
@@ -176,6 +176,7 @@ Replace the <user_name>, <password>, <token> and <SAP_SOAP_API_ENDPOINT>
 curl --location --request POST --insecure -v ^
 -u <user_name>:<password> ^
 -H "Accept: application/xml" -H "Content-Type: application/xml" ^
+-H "SOAPAction: ""http://sap.com/xi/WebService/soap1.1"""
 -H "x-twilio-token: <token>" ^
 -d @./getAccountInfo.xml ^
 https://<host_name>/<env>-sapivr
