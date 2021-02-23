@@ -15,7 +15,7 @@ const app = express();
 const PORT = 80;   // HTTP PORT
 const SSL_PORT = 443;  // HTTPS PORT
 const HOST = "localhost";  // external hostname
-const SANDBOX_TOKEN = "xxxxx"; // Twilio token for QA
+const SANDBOX_TOKEN = "xxxxxx"; // Twilio token for QA
 const PROD_TOKEN = "xxxxxx"; // Twilio token for Prod
 const TOKEN = SANDBOX_TOKEN; // set based on where the API gateway is installed.
 const API_DEV_ENDPOINT = "http://drdx1cilv01.rcvp.tollway.state.il.us:50900/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_TWILIO&receiverParty=&receiverService=&interface=SI_ContactCenterIVRIn&interfaceNamespace=urn:ats:0700:IVR:ContactCenter";  // SAP API DEV endpoint
@@ -42,7 +42,7 @@ app.get('/info', (req, res, next) => {
 
 // Authorization
 app.use('', (req, res, next) => {
-   if (req.headers.authorization) {
+   if (req.headers['x-twilio-token']) {
       console.log(req.body);
        if ( req.headers['x-twilio-token'] !== TOKEN ) {
          res.sendStatus(403);
