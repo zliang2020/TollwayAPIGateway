@@ -10,7 +10,7 @@ To install tollway Twilio IVR API gateway, using below listed steps.
 # COLLECT INFO
 To starting build the API gateway, collecting following information as they are required during the installation.
 * Tollway to provide the load balancer host name
-* Tollway to provide the lAPI GW Hostname
+* Tollway to provide the API GW Hostname
 * Tollway to provide the CA signed certificate for API GW in X-509 format
 * Presidio will delivery the Twilio Tokens to Tollway securely
 * Accenture team to provide SAP SOAP API End Points
