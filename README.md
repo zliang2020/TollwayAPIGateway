@@ -16,6 +16,7 @@ To starting build the API gateway, collecting following information as they are 
 * Accenture team to provide SAP SOAP API End Points
 * Accenture team to provide SAP SOAP API username/password
 * Accenture team to provide SAP API test data
+* ACL IP Addresses:  3.212.20.92, 54.166.90.175, 54.185.42.91, 54.189.94.240 206.128.133.4
 
 
 # INSTALL NODES JS
