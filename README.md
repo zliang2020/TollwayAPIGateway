@@ -184,9 +184,9 @@ https://<host_name>/<env>-sapivr
 ```
 Replace the <user_name>, <password>, <token>, <host_name> and <env>
 
-* Test API GW locally using curl command
+* Test API GW via LB using curl command
 ```bat
-ccurl --location --request POST --insecure -v ^
+curl --location --request POST --insecure -v ^
 -d "Token=<token>&User=<user_name>&Password=<password>&Server=<Load_balancer_Host>/<env>-sapivr"  ^
 https://cyan-crocodile-3728.twil.io/testSAP
 ```
