@@ -82,7 +82,7 @@ yarn add express http-proxy-middleware morgan rotating-file-stream
                 "express": "^4.17.1",
                 "http-proxy-middleware": "^1.0.6",
                 "morgan": "^1.10.0",
-            “rotating-file-stream”: “^2.1.5”
+                "rotating-file-stream": "^2.1.5"
             },
             "scripts": {
                 "start": "node index.js"
