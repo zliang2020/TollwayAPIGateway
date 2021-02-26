@@ -32,7 +32,7 @@ https://www.npmjs.com/get-npm
 
 * Open terminal as administrator
 
-* Install yarn 
+* Install yarn  (Skip this command if you don't have access NPM repository)
 ```bat
 npm install --global yarn
 ```
@@ -45,7 +45,7 @@ Replace {{API_GATEWAY_HOME}} with the folder created in first step.
 
 * Create new nodes application 
 ```bat	
-yarn init
+npm init
 ```
 Accept defaults when prompted for question …
 should see success Saved package.json if successful
@@ -53,7 +53,7 @@ should see success Saved package.json if successful
 
 # CONFIGURE/BUILD API GATEWAY
 
-* Install dependencies
+* Install dependencies  (Skip this command if you don't have access NPM repository)
 ```bat	
 yarn add express http-proxy-middleware morgan rotating-file-stream
 ```
@@ -89,6 +89,11 @@ yarn add express http-proxy-middleware morgan rotating-file-stream
             }
        }
 ```
+* Run this step only if you don't have access NPM repository
+```bat
+Download and unzip the node_modules.zip
+copy the "node_modules" folder to {{API_GATEWAY_HOME}} folder 	
+```  
 
 * Install SSL certificate
 ```bat	
